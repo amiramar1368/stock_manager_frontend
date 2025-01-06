@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import notFound from "../assets/404.png";
+import notFound from "../assets/images/404.png";
 
 function NotFound() {
   return (

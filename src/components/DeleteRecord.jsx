@@ -1,6 +1,7 @@
 import { useState} from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { FaTrashCan } from "react-icons/fa6";
 
 function DeleteRecord({ title, handleRemove }) {
   const [show, setShow] = useState(false);
@@ -12,7 +13,7 @@ function DeleteRecord({ title, handleRemove }) {
 
   return (
     <>
-      <i onClick={handleShowModal} className="bi bi-trash3-fill bi-button"></i>
+    <FaTrashCan onClick={handleShowModal} color="red" cursor="pointer"/>
       <Modal show={show} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Are you Sure {title} ?</Modal.Title>

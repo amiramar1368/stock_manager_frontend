@@ -54,7 +54,7 @@ function LoginForm() {
             <Field name="token" className="mt-2 form-control" type="text" placeholder="If Actived" />
           </div>
           <div className="my-2">
-            <button className="btn btn-primary w-100" type="submit">
+            <button className="btn btn-primary w-100" type="submit" id="login-btn">
               Login
             </button>
           </div>

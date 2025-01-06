@@ -1292,3 +1292,16 @@ h6 {
   color: white !important;
   backdrop-filter: blur(5px);
 }
+
+@keyframes pulsy-effect {
+  0% {
+    box-shadow: 0 0 0 0px rgba(30, 112, 185);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+}
+}
+
+#login-btn{
+  animation: pulsy-effect 1s infinite;
+}

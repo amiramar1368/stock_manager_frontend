@@ -6,6 +6,7 @@ import { Form, Formik, ErrorMessage, Field } from "formik";
 
 import { editUserValidator } from "../../validation/userValidation";
 import { userContext } from "./AddUser";
+import { FaPencil } from "react-icons/fa6";
 
 function EditUser({ title, user }) {
   const { roles, handleEditUser } = useContext(userContext);
@@ -18,7 +19,7 @@ function EditUser({ title, user }) {
 
   return (
     <>
-      <i onClick={handleShow} className="bi bi-pencil-square bi-button"></i>
+    <FaPencil onClick={handleShow} color="blue" cursor="pointer" className="mx-2"/>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>

@@ -1,3 +1,4 @@
+import { FaPencil, FaTrashCan } from "react-icons/fa6";
 import Spinner from "../Spinner";
 
 function ViewDispatch({ records, loading }) {
@@ -30,15 +31,15 @@ function ViewDispatch({ records, loading }) {
                     <td>{record.good.name}</td>
                     <td>{record.number}</td>
                     <td>
-                      <i onClick={handleClick} className="bi bi-pencil-square bi-button" />
-                      <i onClick={handleClick} className="bi bi-trash3-fill bi-button" />
+                      <FaPencil onClick={handleClick} color="blue" cursor="pointer" className="mx-2" />
+                      <FaTrashCan onClick={handleClick} color="red" cursor="pointer" />
                     </td>
                   </tr>
                 );
               })
             ) : (
               <tr>
-                <td colSpan={5}>No User Found ...</td>
+                <td colSpan={7}>No Record Found ...</td>
               </tr>
             )
           ) : (

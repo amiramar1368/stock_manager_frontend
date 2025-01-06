@@ -1,4 +1,6 @@
+import { FaPencil, FaPenClip, FaTrashCan } from "react-icons/fa6";
 import Spinner from "../Spinner";
+import { FaPen } from "react-icons/fa";
 
 function ViewGood({ goods, loading }) {
   const handleClick = () => {
@@ -26,8 +28,8 @@ function ViewGood({ goods, loading }) {
                     <td>{good.good_type.name}</td>
                     <td>{good.name}</td>
                     <td>
-                      <i onClick={handleClick} className="bi bi-pencil-square bi-button" />
-                      <i onClick={handleClick} className="bi bi-trash3-fill bi-button" />
+                       <FaPencil onClick={handleClick} color="blue" cursor="pointer" className="mx-2"/>
+                       <FaTrashCan onClick={handleClick} color="red" cursor="pointer"/>
                     </td>
                   </tr>
                 );

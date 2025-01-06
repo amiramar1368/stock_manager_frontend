@@ -1,3 +1,4 @@
+import { FaPencil, FaTrashCan } from "react-icons/fa6";
 import Spinner from "../Spinner";
 
 function ViewAllocation({ records, loading }) {
@@ -6,7 +7,7 @@ function ViewAllocation({ records, loading }) {
   };
 
   return (
-    <div className="table-content"  style={{height:"calc(100vh - 335px)"}}>
+    <div className="table-content" style={{ height: "calc(100vh - 335px)" }}>
       <table className="table table-striped table-hover text-center table-bordered">
         <thead>
           <tr>
@@ -32,15 +33,15 @@ function ViewAllocation({ records, loading }) {
                     <td>{record.number}</td>
                     <td>{record.warehouse.name}</td>
                     <td>
-                      <i onClick={handleClick} className="bi bi-pencil-square bi-button" />
-                      <i onClick={handleClick} className="bi bi-trash3-fill bi-button" />
+                      <FaPencil onClick={handleClick} color="blue" cursor="pointer" className="mx-2" />
+                      <FaTrashCan onClick={handleClick} color="red" cursor="pointer" />
                     </td>
                   </tr>
                 );
               })
             ) : (
               <tr>
-                <td colSpan={5}>No User Found ...</td>
+                <td colSpan={7}>No Record Found ...</td>
               </tr>
             )
           ) : (

@@ -1,3 +1,4 @@
+import { FaPencil, FaTrashCan } from "react-icons/fa6";
 import Spinner from "../Spinner";
 
 function ViewWarehouse({ warehouses, loading }) {
@@ -23,8 +24,8 @@ function ViewWarehouse({ warehouses, loading }) {
                     <td>{index + 1}</td>
                     <td>{warehouse.name}</td>
                     <td>
-                      <i onClick={handleClick} className="bi bi-pencil-square bi-button" />
-                      <i onClick={handleClick} className="bi bi-trash3-fill bi-button" />
+                      <FaPencil onClick={handleClick} color="blue" cursor="pointer" className="mx-2" />
+                      <FaTrashCan onClick={handleClick} color="red" cursor="pointer" />
                     </td>
                   </tr>
                 );

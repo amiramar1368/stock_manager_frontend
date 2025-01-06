@@ -1,3 +1,4 @@
+import { FaPencil, FaTrashCan } from "react-icons/fa6";
 import Spinner from "../Spinner";
 
 function ViewGoodType({ goodTypes, loading }) {
@@ -5,7 +6,7 @@ function ViewGoodType({ goodTypes, loading }) {
     alert("this feature still not implemented");
   };
   return (
-    <div className="table-content" style={{height:"calc(100vh - 195px)"}}>
+    <div className="table-content" style={{ height: "calc(100vh - 195px)" }}>
       <table className="table table-striped table-hover text-center table-bordered">
         <thead>
           <tr>
@@ -23,8 +24,8 @@ function ViewGoodType({ goodTypes, loading }) {
                     <td>{index + 1}</td>
                     <td>{goodType.name}</td>
                     <td>
-                      <i onClick={handleClick} className="bi bi-pencil-square bi-button" />
-                      <i onClick={handleClick} className="bi bi-trash3-fill bi-button" />
+                      <FaPencil onClick={handleClick} color="blue" cursor="pointer" className="mx-2" />
+                      <FaTrashCan onClick={handleClick} color="red" cursor="pointer" />
                     </td>
                   </tr>
                 );

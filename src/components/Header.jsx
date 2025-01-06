@@ -1,8 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import Toast from "../components/Toast";
+// import Toast from "../components/Toast";
 import ACtive2FA from "./user/Active2FA";
 
 import useAxios from "../customHook/useAxios";
+import { FaSearch, FaSignOutAlt, FaUser } from "react-icons/fa";
 
 export default function Header() {
   const httpService = useAxios();
@@ -31,7 +32,7 @@ export default function Header() {
         <form className="search-form d-flex align-items-center" method="POST" action="#">
           <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
           <button type="submit" title="Search">
-            <i className="bi bi-search"></i>
+            <FaSearch color="blue"/>
           </button>
         </form>
       </div>
@@ -58,7 +59,7 @@ export default function Header() {
 
               <li>
                 <a className="dropdown-item d-flex align-items-center" href="#">
-                  <i className="bi bi-person"></i>
+                  <FaUser className="me-2"/>
                   <ACtive2FA />
                 </a>
               </li>
@@ -69,7 +70,7 @@ export default function Header() {
 
               <li>
                 <a className="dropdown-item d-flex align-items-center" href="#">
-                  <i className="bi bi-box-arrow-right"></i>
+                  <FaSignOutAlt className="me-2"/>
                   <span onClick={handleSignOut}>Sign Out</span>
                 </a>
               </li>
@@ -77,7 +78,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <Toast />
+      {/* <Toast /> */}
     </header>
   );
 }
