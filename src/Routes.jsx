@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import "./index.css";
@@ -9,10 +10,11 @@ import Good from "./components/good/AddGood.jsx";
 import GoodType from "./components/good/AddGoodType.jsx";
 import AddWarehouseAllocation from "./components/warehouse/AddWarehouseAllocation.jsx";
 import AddWarehouseDispatch from "./components/warehouse/AddWarehouseDispatch.jsx";
-import NotFound from "./components/NotFound.jsx";
 import Home from "./components/Home.jsx";
 import LoginForm from "./components/Login.jsx";
 import Auth from "./validation/Auth.jsx";
+
+const NotFound = lazy(() => import("./components/NotFound.jsx"));
 
 const AuthComponent = Auth(App);
 
@@ -59,7 +61,11 @@ export const router = createBrowserRouter([
           },
           {
             path: "*",
-            element: <NotFound />,
+            element: (
+              <Suspense>
+                <NotFound />
+              </Suspense>
+            ),
           },
         ],
       },
