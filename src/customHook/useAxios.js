@@ -19,7 +19,6 @@ export const useAxios = () => {
       return config;
     },
     function (error) {
-      setError(error);
       return Promise.reject(error);
     }
   );

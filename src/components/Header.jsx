@@ -78,7 +78,6 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      {/* <Toast /> */}
     </header>
   );
 }

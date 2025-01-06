@@ -11,11 +11,9 @@ const useStorage = () => {
         value = JSON.parse(value);
         return value;
       } else {
-        console.log(1400);
         return {};
       }
     } catch (err) {
-      console.log(1500);
       return {};
     }
   };

@@ -4,39 +4,41 @@ import { toast } from "react-toastify";
 
 import useAxios from "../../customHook/useAxios";
 
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function BarChart() {
   const httpServise = useAxios();
   const [dataPoints, setDataPoints] = useState([]);
 
-  useEffect(() => {
-    async function get10MinStocks() {
-        const response = await httpServise.get("/remain-stock");
-        if (response.success) {
-          const filteredRecords = response.body;
-          const data = [];
-          for (let i = 0; i < filteredRecords.length; i++) {
-            if (filteredRecords[i].number > 0) {
-              data.push({
-                x: filteredRecords[i].good.name,
-                y: filteredRecords[i].number,
-                indexLabel: filteredRecords[i].good.name,
-              });
-            }
+  async function get10MinStocks() {
+      const response = await httpServise.get("/remain-stock");
+      if (response.success) {
+        const filteredRecords = response.body;
+        const data = [];
+        for (let i = 0; i < filteredRecords.length; i++) {
+          if (filteredRecords[i].number > 0) {
+            data.push({
+              x: filteredRecords[i].good.name,
+              y: filteredRecords[i].number,
+              indexLabel: filteredRecords[i].good.name,
+            });
           }
-          setDataPoints(data);
-        } else {
-          toast.error(response.message);
         }
-    }
+        setDataPoints(data);
+      } else {
+        toast.error(response.message);
+      }
+  }
+  useEffect(() => {
     get10MinStocks();
   }, []);
   const options = {
     animationEnabled: true,
     exportEnabled: true,
     theme: "light1", //"light1", "dark1", "dark2"
+    width: 900,  
+    height: 500, 
+    backgroundColor: "#F6F9FF",
     title: {
       text: "Remain In Stockes",
     },
